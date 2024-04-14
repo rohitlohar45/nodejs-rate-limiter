@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-rate-limitter",
+  "name": "nodejs-redis-rate-limitter",
   "version": "1.0.0",
   "description": "",
   "main": "dist/lib/index.js",
