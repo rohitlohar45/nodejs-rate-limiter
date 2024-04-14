@@ -7,7 +7,12 @@
     "dev": "ts-node-dev --respawn --ignore-watch node_modules lib/lib.ts",
     "test": "jest --passWithNoTests --runInBand"
   },
-  "keywords": [],
+  "keywords": [
+    "rate-limiter",
+    "redis",
+    "servers",
+    "distributed"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
