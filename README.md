@@ -67,7 +67,7 @@ To use `nodejs-rate-limiter` in your Express application, follow these steps:
    ```javascript
    const app = express();
 
-   app.use(limiter.middleware());
+   app.use(limiter);
 
    // Define your routes and application logic here...
 
@@ -110,17 +110,6 @@ const loginLimiter = new RateLimiter({
 
 app.post("/login", loginLimiter.middleware(), (req, res) => {
   // Route logic
-});
-```
-
-## Resetting the Rate Limiter
-
-You can reset the rate limiter for a specific client by accessing the `resetKey` method within the request object. Here's an example of resetting the rate limiter for a `/reset` route:
-
-```javascript
-app.post("/reset", limiter.middleware(), async (req, res) => {
-  await limiter.resetKey(req.ip);
-  res.send("Counter reset!");
 });
 ```
 
