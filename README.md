@@ -1,24 +1,24 @@
-# nodejs-rate-limiter
+# nodejs-redis-rate-limitter
 
-`nodejs-rate-limiter` is a middleware library for rate limiting in Express applications using Redis as the storage backend. It allows you to control the rate of incoming requests from clients and protect your server from excessive traffic.
+`nodejs-redis-rate-limitter` is a middleware library for rate limiting in Express applications using Redis as the storage backend. It allows you to control the rate of incoming requests from clients and protect your server from excessive traffic.
 
 ## Installation
 
 Install the package via npm:
 
 ```shell
-npm install nodejs-rate-limiter
+npm install nodejs-redis-rate-limitter
 ```
 
 ## Usage
 
-To use `nodejs-rate-limiter` in your Express application, follow these steps:
+To use `nodejs-redis-rate-limitter` in your Express application, follow these steps:
 
 1. Import the necessary modules:
 
    ```javascript
    import express from "express";
-   import { RateLimiter } from "nodejs-rate-limiter";
+   import { RateLimiter } from "nodejs-redis-rate-limitter";
    import { createClient } from "redis"; // For node-redis
    import ioredis from "ioredis"; // For ioredis
    ```
@@ -115,7 +115,7 @@ app.post("/login", loginLimiter.middleware(), (req, res) => {
 
 ## Response Headers
 
-When using `nodejs-rate-limiter`, several custom headers can be added to the response to provide information about the rate limit. These headers can be used by the client to understand the rate limiting status and adjust their requests accordingly.
+When using `nodejs-redis-rate-limitter`, several custom headers can be added to the response to provide information about the rate limit. These headers can be used by the client to understand the rate limiting status and adjust their requests accordingly.
 
 - `X-Rate-Limit-Limit`: Represents the maximum number of requests allowed per client within the defined duration (`max` value from the rate limiter options).
 - `X-Rate-Limit-Remaining`: Indicates the remaining number of requests that the client can make within the defined duration. If the value is negative, it means the client has exceeded the rate limit and no more requests are allowed.
